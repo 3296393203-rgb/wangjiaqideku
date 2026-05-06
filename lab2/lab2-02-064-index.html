@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图书商城布局示例</title>
+    <link rel="stylesheet" href="css/lab2-02-064-index.css">
+</head>
+<body>
+    <!-- 头部区域 -->
+    <div class="site-header">
+        <div class="top-bar">
+            <div class="logo">书屋Logo</div>
+            <div class="top-nav">
+                <a href="#" class="nav-item">首页</a>
+                <a href="#" class="nav-item">最新</a>
+                <a href="#" class="nav-item">分类</a>
+                <a href="#" class="nav-item">联系我们</a>
+                <a href="#" class="nav-item login-trigger">登录/注册</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 登录/注册对话框 -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-box">
+            <span class="modal-close" id="modalClose">&times;</span>
+            
+            <!-- 登录表单 -->
+            <div class="form-container" id="loginForm">
+                <h2>登录</h2>
+                <form>
+                    <div class="form-group">
+                        <label>邮箱</label>
+                        <input type="email" placeholder="请输入邮箱" required>
+                    </div>
+                    <div class="form-group">
+                        <label>密码</label>
+                        <input type="password" placeholder="请输入密码" required>
+                    </div>
+                    <button type="submit" class="form-btn">登录</button>
+                </form>
+                <div class="form-switch">
+                    还没有账号？<button type="button" class="switch-btn" id="switchToRegister">立即注册</button>
+                </div>
+            </div>
+            
+            <!-- 注册表单 -->
+            <div class="form-container" id="registerForm" style="display: none;">
+                <h2>注册</h2>
+                <form>
+                    <div class="form-group">
+                        <label>用户名</label>
+                        <input type="text" placeholder="请输入用户名" required>
+                    </div>
+                    <div class="form-group">
+                        <label>邮箱</label>
+                        <input type="email" placeholder="请输入邮箱" required>
+                    </div>
+                    <div class="form-group">
+                        <label>密码</label>
+                        <input type="password" placeholder="请输入密码" required>
+                    </div>
+                    <button type="submit" class="form-btn">注册</button>
+                </form>
+                <div class="form-switch">
+                    已有账号？<button type="button" class="switch-btn" id="switchToLogin">立即登录</button>
+                </div>
+            </div>
+            
+            <!-- 第三方登录 -->
+            <div class="social-login">
+                <p>其他登录方式</p>
+                <div class="social-icons">
+                    <button type="button" class="social-icon qq" title="QQ登录"></button>
+                    <button type="button" class="social-icon wechat" title="微信登录"></button>
+                    <button type="button" class="social-icon github" title="GitHub登录"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主体容器 -->
+    <div class="page-container">
+        <!-- 左侧栏 -->
+        <div class="left-sidebar">
+            <div>图书分类</div>
+            <ul class="category-list">
+                <li><a href="#">文学</a></li>
+                <li><a href="#">历史</a></li>
+                <li><a href="#">科技</a></li>
+                <li><a href="#">艺术</a></li>
+                <li><a href="#">儿童</a></li>
+            </ul>
+        </div>
+
+        <!-- 中间内容区 -->
+        <div class="main-content">
+            <!-- 中间顶部大图 -->
+            <div class="banner-box">
+                <img src="img/图书商城布局实现.png" alt="图书商城大图">
+            </div>
+
+            <!-- 图书展示区 -->
+            <div class="book-showcase">
+                <div>图书展示区</div>
+                <div class="book-grid">
+                    <div class="book-card book-card-hover">
+                        <div class="book-cover">
+                            <div class="book-hover-info">点击查看详情</div>
+                            <img src="img/b1.jpg" alt="图书1" width="185px">
+                        </div>
+                        <div>精品小说</div>
+                        <div>优质文学作品推荐</div>
+                    </div>
+                    <div class="book-card">
+                        <img src="img/b2.jpg" alt="图书2" width="185px">
+                        <div>历史文献</div>
+                        <div>穿越时空的经典</div>
+                    </div>
+                    <div class="book-card">
+                        <img src="img/b3.jpg" alt="图书3" width="185px">
+                        <div>科技前沿</div>
+                        <div>最新科技趋势解读</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 热门推荐 -->
+            <div class="hot-recommend">
+                <div>热门推荐</div>
+                <div class="hot-list">
+                    <div class="hot-item">热销图书A</div>
+                    <div class="hot-item">热销图书B</div>
+                    <div class="hot-item">热销图书C</div>
+                </div>
+            </div>
+
+            <!-- 新书上市 -->
+            <div class="new-arrival">
+                <div>新书上市</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>书名</th>
+                            <th>作者</th>
+                            <th>上市日期</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>新概念阅读</td>
+                            <td>张三</td>
+                            <td>2026-04-01</td>
+                        </tr>
+                        <tr>
+                            <td>设计思维</td>
+                            <td>李四</td>
+                            <td>2026-03-28</td>
+                        </tr>
+                        <tr>
+                            <td>现代营销</td>
+                            <td>王五</td>
+                            <td>2026-03-20</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 右侧栏 -->
+        <div class="right-sidebar">
+            <div class="promo-box">
+                <div>促销信息</div>
+                <div>限时折扣：所有畅销书8折</div>
+                <div>会员专享：满200减50</div>
+                <div class="promo-btn">立即抢购</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 获取元素
+        const loginTrigger = document.querySelector('.login-trigger');
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalClose = document.getElementById('modalClose');
+        const switchToRegister = document.getElementById('switchToRegister');
+        const switchToLogin = document.getElementById('switchToLogin');
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+
+        // 点击登录/注册按钮显示对话框
+        loginTrigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            modalOverlay.style.display = 'block';
+        });
+
+        // 点击关闭按钮隐藏对话框
+        modalClose.addEventListener('click', function() {
+            modalOverlay.style.display = 'none';
+        });
+
+        // 点击遮罩层隐藏对话框
+        modalOverlay.addEventListener('click', function(e) {
+            if (e.target === modalOverlay) {
+                modalOverlay.style.display = 'none';
+            }
+        });
+
+        // 切换到注册表单
+        switchToRegister.addEventListener('click', function(e) {
+            e.preventDefault();
+            loginForm.style.display = 'none';
+            registerForm.style.display = 'block';
+        });
+
+        // 切换到登录表单
+        switchToLogin.addEventListener('click', function(e) {
+            e.preventDefault();
+            registerForm.style.display = 'none';
+            loginForm.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
